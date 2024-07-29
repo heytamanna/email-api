@@ -1,0 +1,16 @@
+{
+  "name": "email-api",
+  "version": "1.0.0",
+  "description": "A Serverless email sending API",
+  "main": "handler.js",
+  "scripts": {
+    "start": "serverless offline"
+  },
+  "devDependencies": {
+    "serverless-offline": "^13.6.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1124.0"
+  }
+}
+

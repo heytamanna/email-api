@@ -1,0 +1,29 @@
+service: email-sender
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: us-east-1
+  environment:
+    EMAIL_SENDER: tamannachoudhary8797@gmail.com
+    PROFILE: Tamanna
+
+custom:
+  stage: ${opt:stage, 'dev'}
+  offline:
+    port: 3000
+    stage: ${self:custom.stage}
+
+plugins:
+  - serverless-offline
+
+functions:
+  sendEmail:
+    handler: handler.sendEmail
+    events:
+      - http:
+          path: send-email
+          method: post
+          cors: true
+
+
