@@ -162,13 +162,19 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/email-sender/dev/1722252536732-2024-07-29T11:28:56.732Z/email-sender.zip"
+          "S3Key": "serverless/email-sender/dev/1722266378872-2024-07-29T15:19:38.872Z/email-sender.zip"
         },
         "Handler": "handler.sendEmail",
         "Runtime": "nodejs16.x",
         "FunctionName": "email-sender-dev-sendEmail",
         "MemorySize": 1024,
         "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "EMAIL_SENDER": "tamannachoudhary8797@gmail.com",
+            "PROFILE": "Tamanna"
+          }
+        },
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -180,14 +186,14 @@
         "SendEmailLogGroup"
       ]
     },
-    "SendEmailLambdaVersionFblAoT20Jjxp0nH57CSIdiv4etA79fYgDAT3BOsH4": {
+    "SendEmailLambdaVersionb4KH3N4iKUSGH2CtCLoXRETgmT3L1HUfs6B9spkCAs": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SendEmailLambdaFunction"
         },
-        "CodeSha256": "3Il8AmzlHqdzys/MOpFVk2A6cfmbanYtzHy3W/RrXq0="
+        "CodeSha256": "GOWrX2tk1lQWNOUJz1Uo7SL361gqVv66u+VtYgAjX48="
       }
     },
     "ApiGatewayRestApi": {
@@ -308,7 +314,7 @@
         "SendEmailLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1722252517713": {
+    "ApiGatewayDeployment1722266358187": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -371,7 +377,7 @@
     "SendEmailLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SendEmailLambdaVersionFblAoT20Jjxp0nH57CSIdiv4etA79fYgDAT3BOsH4"
+        "Ref": "SendEmailLambdaVersionb4KH3N4iKUSGH2CtCLoXRETgmT3L1HUfs6B9spkCAs"
       },
       "Export": {
         "Name": "sls-email-sender-dev-SendEmailLambdaFunctionQualifiedArn"

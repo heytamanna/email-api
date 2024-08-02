@@ -2,7 +2,7 @@ service: email-sender
 
 provider:
   name: aws
-  runtime: nodejs16.x
+  runtime: python3.8
   region: us-east-1
   environment:
     EMAIL_SENDER: tamannachoudhary8797@gmail.com
@@ -19,7 +19,7 @@ plugins:
 
 functions:
   sendEmail:
-    handler: handler.sendEmail
+    handler: handler.send_email
     events:
       - http:
           path: send-email

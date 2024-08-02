@@ -1,0 +1,273 @@
+{
+  "D:\\email-api": {
+    "versionSfCore": null,
+    "versionFramework": "4.1.19",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "aws": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "service": "email-sender",
+            "provider": {
+              "name": "aws",
+              "runtime": "nodejs16.x",
+              "region": "us-east-1",
+              "environment": {
+                "EMAIL_SENDER": "tamannachoudhary8797@gmail.com",
+                "PROFILE": "Tamanna"
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "custom": {
+              "stage": "dev",
+              "offline": {
+                "port": 3000,
+                "stage": "dev"
+              }
+            },
+            "plugins": [
+              "serverless-offline"
+            ],
+            "functions": {
+              "sendEmail": {
+                "handler": "handler.sendEmail",
+                "events": [
+                  {
+                    "http": {
+                      "path": "send-email",
+                      "method": "post",
+                      "cors": true
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "configFileDirPath": "D:\\email-api",
+          "config": {
+            "type": "aws"
+          },
+          "options": {
+            "template": "aws-python3",
+            "path": "email-service"
+          },
+          "stage": "dev",
+          "dashboard": null,
+          "isDefaultConfig": true
+        },
+        "resolvers": {}
+      },
+      "opt": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "service": "email-sender",
+            "provider": {
+              "name": "aws",
+              "runtime": "nodejs16.x",
+              "region": "us-east-1",
+              "environment": {
+                "EMAIL_SENDER": "tamannachoudhary8797@gmail.com",
+                "PROFILE": "Tamanna"
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "custom": {
+              "stage": "dev",
+              "offline": {
+                "port": 3000,
+                "stage": "dev"
+              }
+            },
+            "plugins": [
+              "serverless-offline"
+            ],
+            "functions": {
+              "sendEmail": {
+                "handler": "handler.sendEmail",
+                "events": [
+                  {
+                    "http": {
+                      "path": "send-email",
+                      "method": "post",
+                      "cors": true
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "configFileDirPath": "D:\\email-api",
+          "config": {
+            "type": "opt"
+          },
+          "options": {
+            "template": "aws-python3",
+            "path": "email-service"
+          },
+          "stage": "dev",
+          "dashboard": null
+        },
+        "resolvers": {}
+      },
+      "self": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "service": "email-sender",
+            "provider": {
+              "name": "aws",
+              "runtime": "nodejs16.x",
+              "region": "us-east-1",
+              "environment": {
+                "EMAIL_SENDER": "tamannachoudhary8797@gmail.com",
+                "PROFILE": "Tamanna"
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "custom": {
+              "stage": "dev",
+              "offline": {
+                "port": 3000,
+                "stage": "dev"
+              }
+            },
+            "plugins": [
+              "serverless-offline"
+            ],
+            "functions": {
+              "sendEmail": {
+                "handler": "handler.sendEmail",
+                "events": [
+                  {
+                    "http": {
+                      "path": "send-email",
+                      "method": "post",
+                      "cors": true
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "configFileDirPath": "D:\\email-api",
+          "config": {
+            "type": "self"
+          },
+          "options": {
+            "template": "aws-python3",
+            "path": "email-service"
+          },
+          "stage": "dev",
+          "dashboard": null
+        },
+        "resolvers": {}
+      }
+    },
+    "composeServiceName": null,
+    "servicePath": "D:\\email-api",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "email-sender",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs16.x",
+        "region": "us-east-1",
+        "environment": {
+          "EMAIL_SENDER": "tamannachoudhary8797@gmail.com",
+          "PROFILE": "Tamanna"
+        },
+        "stage": "dev",
+        "versionFunctions": true
+      },
+      "custom": {
+        "stage": "dev",
+        "offline": {
+          "port": 3000,
+          "stage": "dev"
+        }
+      },
+      "plugins": [
+        "serverless-offline"
+      ],
+      "functions": {
+        "sendEmail": {
+          "handler": "handler.sendEmail",
+          "events": [
+            {
+              "http": {
+                "path": "send-email",
+                "method": "post",
+                "cors": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    "serviceRawFile": "service: email-sender\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs16.x\r\n  region: us-east-1\r\n  environment:\r\n    EMAIL_SENDER: tamannachoudhary8797@gmail.com\r\n    PROFILE: Tamanna\r\n\r\ncustom:\r\n  stage: ${opt:stage, 'dev'}\r\n  offline:\r\n    port: 3000\r\n    stage: ${self:custom.stage}\r\n\r\nplugins:\r\n  - serverless-offline\r\n\r\nfunctions:\r\n  sendEmail:\r\n    handler: handler.sendEmail\r\n    events:\r\n      - http:\r\n          path: send-email\r\n          method: post\r\n          cors: true\r\n\r\n\r\n",
+    "command": [
+      "create"
+    ],
+    "options": {
+      "template": "aws-python3",
+      "path": "email-service"
+    },
+    "error": {
+      "message": "The \"create\" command was deprecated in v4. To create a new project, run the \"serverless\" command instead.",
+      "code": "UNRECOGNIZED_CLI_COMMAND"
+    },
+    "params": {},
+    "machineId": "aacfb0970284e216a382918d161ec1ff",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "7fe9ce27-9c95-4f2a-abed-2d0a49882793",
+    "orgName": "tamanna1",
+    "userId": "1SZH3T7pZmKcx1kvpf",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "tamanna1",
+    "subscription": null,
+    "userEmail": "tamannachoudhary8797@gmail.com",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "010928199269",
+    "versionSf": "4.1.19",
+    "serviceProviderAwsCfStackName": "email-sender-dev",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:010928199269:stack/email-sender-dev/b7f2c350-4d99-11ef-82cc-0e7bab671aeb",
+    "serviceProviderAwsCfStackCreated": "2024-07-29T11:00:08.375Z",
+    "serviceProviderAwsCfStackUpdated": "2024-07-29T15:04:17.051Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "SendEmailLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:010928199269:function:email-sender-dev-sendEmail:3",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-email-sender-dev-SendEmailLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "ServiceEndpoint",
+        "OutputValue": "https://gq02fu3use.execute-api.us-east-1.amazonaws.com/dev",
+        "Description": "URL of the service endpoint",
+        "ExportName": "sls-email-sender-dev-ServiceEndpoint"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "email-sender-dev-serverlessdeploymentbucket-6nnts6er62zw",
+        "ExportName": "sls-email-sender-dev-ServerlessDeploymentBucketName"
+      }
+    ]
+  }
+}
